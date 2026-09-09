@@ -6,6 +6,21 @@
   <title>AULA360 | Cursos Online para Aprender y Emprender</title>
   <meta name="description" content="Cursos online de masajes, cocina, peluquería, belleza, oficios, tecnología y emprendimientos. Aprendé a tu ritmo desde cualquier dispositivo.">
   <meta name="theme-color" content="#6d4aff">
+  
+  <!-- OG Tags - SOLO acá va la imagen que me pasaste -->
+  <meta property="og:title" content="AULA360 | Cursos Online para Aprender y Emprender">
+  <meta property="og:description" content="Cursos online de masajes, cocina, peluquería, belleza, oficios, tecnología y emprendimientos. Aprendé a tu ritmo desde cualquier dispositivo.">
+  <meta property="og:image" content="https://iili.io/n3ysIS4.md.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://aula360.com">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AULA360">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AULA360 | Cursos Online para Aprender y Emprender">
+  <meta name="twitter:description" content="Cursos online de masajes, cocina, peluquería, belleza, oficios, tecnología y emprendimientos. Aprendé a tu ritmo desde cualquier dispositivo.">
+  <meta name="twitter:image" content="https://iili.io/n3ysIS4.md.jpg">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
@@ -23,6 +38,9 @@
       --success:#24a36b;
       --shadow:0 18px 50px rgba(35,27,76,.10);
       --radius:22px;
+      --dark-bg:#0d0b1a;
+      --dark-surface:#1a1730;
+      --whatsapp:#25d366;
     }
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
@@ -33,18 +51,23 @@
     img{display:block;width:100%;object-fit:cover}
     .container{width:min(1180px,92%);margin:auto}
 
-    /* HEADER */
+    /* HEADER - Fondo oscuro */
     header{
-      position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);
-      backdrop-filter:blur(16px);border-bottom:1px solid rgba(233,231,241,.8)
+      position:sticky;top:0;z-index:50;
+      background:rgba(13,11,26,.92);
+      backdrop-filter:blur(16px);
+      border-bottom:1px solid rgba(255,255,255,.08);
     }
     .nav{height:76px;display:flex;align-items:center;gap:30px}
-    .logo{font-family:"Plus Jakarta Sans";font-size:22px;font-weight:800;letter-spacing:-1px}
+    .logo{display:flex;align-items:center;gap:10px;font-family:"Plus Jakarta Sans";font-size:22px;font-weight:800;letter-spacing:-1px;color:#fff}
+    .logo img{width:42px;height:42px;border-radius:12px;object-fit:contain}
     .logo span{color:var(--primary)}
     .nav-links{display:flex;gap:25px;margin-left:auto;font-weight:600;font-size:14px}
-    .nav-links a:hover{color:var(--primary)}
-    .nav-btn{background:var(--ink);color:#fff;padding:11px 18px;border-radius:12px;font-weight:700;font-size:14px}
-    .menu-btn{display:none;background:none;font-size:25px}
+    .nav-links a{color:rgba(255,255,255,.7);transition:color .2s}
+    .nav-links a:hover{color:#fff}
+    .nav-btn{background:var(--primary);color:#fff;padding:11px 18px;border-radius:12px;font-weight:700;font-size:14px;transition:background .2s}
+    .nav-btn:hover{background:var(--primary-dark)}
+    .menu-btn{display:none;background:none;font-size:25px;color:#fff}
 
     /* HERO */
     .hero{padding:75px 0 55px;overflow:hidden}
@@ -70,6 +93,12 @@
     .fc-icon{width:42px;height:42px;border-radius:12px;background:#eeeaff;display:grid;place-items:center;font-size:20px}
     .fc-bottom{right:-22px;bottom:30px}
     .stars{color:#f4a62a;font-size:14px}.small{font-size:12px;color:var(--muted)}
+    
+    /* HERO LOGO DECORATIVO */
+    .hero-logo-deco{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.7);backdrop-filter:blur(8px);padding:10px 18px 10px 12px;border-radius:99px;border:1px solid var(--line);margin-top:16px}
+    .hero-logo-deco img{width:36px;height:36px;border-radius:10px;object-fit:contain}
+    .hero-logo-deco span{font-weight:700;font-size:14px;color:var(--ink)}
+    .hero-logo-deco small{color:var(--muted);font-weight:400}
 
     /* SEARCH */
     .search-wrap{margin-top:15px;background:#fff;border:1px solid var(--line);box-shadow:0 12px 35px rgba(35,27,76,.07);border-radius:18px;padding:10px;display:flex;gap:8px}
@@ -128,21 +157,142 @@
     .cta h2{font-family:"Plus Jakarta Sans";font-size:35px;line-height:1.1;letter-spacing:-1px;position:relative;z-index:1}.cta p{opacity:.82;margin-top:10px;position:relative;z-index:1}
     .cta .btn{background:#fff;color:var(--primary);position:relative;z-index:2;white-space:nowrap}
 
-    footer{background:#fff;border-top:1px solid var(--line);padding:35px 0}
-    .footer-grid{display:flex;justify-content:space-between;gap:25px}.footer-copy{color:var(--muted);font-size:13px}.footer-links{display:flex;gap:20px;font-size:13px;font-weight:700}
+    /* FOOTER - Fondo oscuro */
+    footer{
+      background:var(--dark-bg);
+      border-top:1px solid rgba(255,255,255,.06);
+      padding:35px 0;
+    }
+    .footer-grid{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:25px;
+    }
+    .footer-brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+    .footer-brand img{
+      width:40px;
+      height:40px;
+      border-radius:10px;
+      object-fit:contain;
+    }
+    .footer-brand .logo{
+      font-size:20px;
+      color:#fff;
+    }
+    .footer-copy{
+      color:rgba(255,255,255,.5);
+      font-size:13px;
+      margin-top:4px;
+    }
+    .footer-copy a{
+      color:rgba(255,255,255,.6);
+      transition:color .2s;
+      font-weight:600;
+    }
+    .footer-copy a:hover{
+      color:#fff;
+    }
+    .footer-links{
+      display:flex;
+      gap:20px;
+      font-size:13px;
+      font-weight:700;
+    }
+    .footer-links a{
+      color:rgba(255,255,255,.5);
+      transition:color .2s;
+    }
+    .footer-links a:hover{
+      color:#fff;
+    }
+
     .hidden{display:none!important}
 
-    /* MODAL */
-    .modal{position:fixed;inset:0;background:rgba(14,12,25,.68);z-index:100;display:none;align-items:center;justify-content:center;padding:20px}
-    .modal.open{display:flex}
-    .modal-card{background:#fff;width:min(850px,100%);max-height:90vh;overflow:auto;border-radius:24px;position:relative}
-    .modal-close{position:absolute;right:15px;top:15px;width:38px;height:38px;border-radius:50%;background:#fff;font-size:20px;z-index:2;box-shadow:0 4px 16px rgba(0,0,0,.12)}
-    .modal-img{height:290px}.modal-img img{height:100%}
-    .modal-content{padding:28px}
-    .modal-content h2{font-family:"Plus Jakarta Sans";font-size:30px;line-height:1.15;margin:7px 0 12px}
-    .modal-content p{color:var(--muted)}
-    .modal-details{display:flex;gap:15px;flex-wrap:wrap;margin:18px 0}.detail{background:#f6f5fa;padding:10px 13px;border-radius:10px;font-size:12px;font-weight:700}
-    .modal-price{font-family:"Plus Jakarta Sans";font-size:28px;font-weight:800;margin:15px 0}
+    /* MODAL - Mejorado */
+    .modal{position:fixed;inset:0;background:rgba(14,12,25,.75);z-index:100;display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(4px)}
+    .modal.open{display:flex;animation:fadeIn .25s ease}
+    @keyframes fadeIn{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:scale(1)}}
+    .modal-card{background:#fff;width:min(850px,100%);max-height:90vh;overflow:auto;border-radius:24px;position:relative;box-shadow:0 30px 80px rgba(0,0,0,.35)}
+    .modal-close{position:absolute;right:15px;top:15px;width:38px;height:38px;border-radius:50%;background:#fff;font-size:20px;z-index:2;box-shadow:0 4px 16px rgba(0,0,0,.12);transition:.2s}
+    .modal-close:hover{transform:rotate(90deg);background:#f0f0f0}
+    .modal-img{height:300px;position:relative}
+    .modal-img img{height:100%;border-radius:24px 24px 0 0}
+    .modal-badge{position:absolute;top:16px;left:16px;background:rgba(0,0,0,.7);color:#fff;backdrop-filter:blur(8px);padding:6px 14px;border-radius:99px;font-size:12px;font-weight:700}
+    .modal-content{padding:32px}
+    .modal-content .course-cat{display:inline-block;background:#eeeaff;padding:4px 14px;border-radius:99px;font-size:12px;font-weight:800;color:var(--primary);text-transform:uppercase;letter-spacing:.5px}
+    .modal-content h2{font-family:"Plus Jakarta Sans";font-size:32px;line-height:1.15;margin:12px 0 8px}
+    .modal-content .modal-desc{color:var(--muted);font-size:16px;line-height:1.7}
+    .modal-details{display:flex;gap:12px;flex-wrap:wrap;margin:20px 0;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .detail{background:#f6f5fa;padding:8px 16px;border-radius:10px;font-size:13px;font-weight:600;display:flex;align-items:center;gap:6px}
+    .modal-benefits{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0}
+    .modal-benefits .mb{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--muted)}
+    .modal-benefits .mb span{font-size:18px}
+    .modal-price{font-family:"Plus Jakarta Sans";font-size:32px;font-weight:800;color:var(--primary);margin:18px 0 10px}
+    .modal-price small{font:500 14px "DM Sans";color:var(--muted);text-decoration:line-through;margin-left:12px}
+    .modal-actions{display:flex;gap:12px;margin-top:10px}
+    .modal-actions .btn{flex:1;text-align:center}
+    .btn-whatsapp{background:#25d366;color:#fff}
+    .btn-whatsapp:hover{background:#1da851;transform:translateY(-2px)}
+
+    /* WHATSAPP FLOATING BUTTON */
+    .whatsapp-float{
+      position:fixed;
+      bottom:28px;
+      right:28px;
+      z-index:99;
+      background:#25d366;
+      width:64px;
+      height:64px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 6px 30px rgba(37,211,102,.35);
+      transition:transform .25s, box-shadow .25s;
+      border:2px solid rgba(255,255,255,.2);
+      cursor:pointer;
+    }
+    .whatsapp-float:hover{
+      transform:scale(1.08);
+      box-shadow:0 8px 40px rgba(37,211,102,.45);
+    }
+    .whatsapp-float svg{
+      width:36px;
+      height:36px;
+      fill:#fff;
+    }
+    .whatsapp-float .tooltip{
+      position:absolute;
+      right:76px;
+      background:#0d0b1a;
+      color:#fff;
+      padding:8px 16px;
+      border-radius:12px;
+      font-size:13px;
+      font-weight:600;
+      white-space:nowrap;
+      opacity:0;
+      pointer-events:none;
+      transition:opacity .25s;
+    }
+    .whatsapp-float:hover .tooltip{
+      opacity:1;
+    }
+    .whatsapp-float .tooltip:after{
+      content:"";
+      position:absolute;
+      right:-6px;
+      top:50%;
+      transform:translateY(-50%);
+      border-left:6px solid #0d0b1a;
+      border-top:6px solid transparent;
+      border-bottom:6px solid transparent;
+    }
 
     @media(max-width:900px){
       .nav-links{display:none}.menu-btn{display:block;margin-left:auto}.nav-btn{display:none}
@@ -150,6 +300,9 @@
       .categories{grid-template-columns:repeat(3,1fr)}
       .courses{grid-template-columns:repeat(2,1fr)}
       .benefit-grid{grid-template-columns:repeat(2,1fr)}
+      .modal-benefits{grid-template-columns:1fr}
+      .whatsapp-float{width:56px;height:56px;bottom:20px;right:20px}
+      .whatsapp-float svg{width:30px;height:30px}
     }
     @media(max-width:620px){
       .hero{padding-top:45px}h1{font-size:43px;letter-spacing:-2px}.hero-image{height:330px}.fc-top{left:5px}.fc-bottom{right:5px}
@@ -157,7 +310,10 @@
       section{padding:52px 0}.section-head{display:block}.section-head p{margin-top:7px}
       .categories{grid-template-columns:repeat(2,1fr)}.courses{grid-template-columns:1fr}.benefit-grid,.testimonials{grid-template-columns:1fr}
       .cta-box{padding:32px;display:block}.cta h2{font-size:29px}.cta .btn{margin-top:22px}
-      .footer-grid{display:block}.footer-links{margin-top:15px;flex-wrap:wrap}
+      .footer-grid{flex-direction:column;text-align:center}.footer-links{margin-top:15px;flex-wrap:wrap;justify-content:center}
+      .modal-content{padding:20px}
+      .modal-content h2{font-size:26px}
+      .modal-actions{flex-direction:column}
     }
   </style>
 </head>
@@ -165,7 +321,11 @@
 <body>
 <header>
   <div class="container nav">
-    <a class="logo" href="#">AULA<span>360</span></a>
+    <a class="logo" href="#">
+      <!-- Logo ORIGINAL (n3yhuls.png) -->
+      <img src="https://iili.io/n3yhuls.png" alt="AULA360 Logo">
+      <span>AULA</span><span>360</span>
+    </a>
     <nav class="nav-links">
       <a href="#cursos">Cursos</a>
       <a href="#categorias">Categorías</a>
@@ -187,6 +347,11 @@
         <div class="hero-actions">
           <a href="#cursos" class="btn btn-primary">Ver todos los cursos →</a>
           <a href="#categorias" class="btn btn-light">Explorar categorías</a>
+        </div>
+        <!-- Logo ORIGINAL en hero (n3yhuls.png) -->
+        <div class="hero-logo-deco">
+          <img src="https://iili.io/n3yhuls.png" alt="AULA360 Logo">
+          <span>AULA360 <small>• Aprendé desde cualquier lugar</small></span>
         </div>
         <div class="hero-trust">
           <div class="avatars">
@@ -273,9 +438,9 @@
     <div class="container">
       <div class="section-head"><div><h2>Lo que dicen nuestros alumnos</h2><p>Experiencias de personas que decidieron aprender algo nuevo.</p></div></div>
       <div class="testimonials">
-        <article class="testimonial"><div class="stars">★★★★★</div><p class="quote">“El curso de masajes fue súper claro. Pude practicar desde casa y ahora estoy empezando a ofrecer el servicio.”</p><div class="person"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&q=80" alt=""><div><strong>Mariana G.</strong><span>Curso de Masajes</span></div></div></article>
-        <article class="testimonial"><div class="stars">★★★★★</div><p class="quote">“Me encantó que las clases van directo a lo importante. Terminé el curso de pastelería y ya estoy haciendo pedidos.”</p><div class="person"><img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=100&q=80" alt=""><div><strong>Lucas R.</strong><span>Curso de Pastelería</span></div></div></article>
-        <article class="testimonial"><div class="stars">★★★★★</div><p class="quote">“La plataforma es muy fácil de usar y pude mirar las clases desde el teléfono. Muy recomendable.”</p><div class="person"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&q=80" alt=""><div><strong>Camila P.</strong><span>Curso de Peluquería</span></div></div></article>
+        <article class="testimonial"><div class="stars">★★★★★</div><p class="quote">"El curso de masajes fue súper claro. Pude practicar desde casa y ahora estoy empezando a ofrecer el servicio."</p><div class="person"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&q=80" alt=""><div><strong>Mariana G.</strong><span>Curso de Masajes</span></div></div></article>
+        <article class="testimonial"><div class="stars">★★★★★</div><p class="quote">"Me encantó que las clases van directo a lo importante. Terminé el curso de pastelería y ya estoy haciendo pedidos."</p><div class="person"><img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=100&q=80" alt=""><div><strong>Lucas R.</strong><span>Curso de Pastelería</span></div></div></article>
+        <article class="testimonial"><div class="stars">★★★★★</div><p class="quote">"La plataforma es muy fácil de usar y pude mirar las clases desde el teléfono. Muy recomendable."</p><div class="person"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&q=80" alt=""><div><strong>Camila P.</strong><span>Curso de Peluquería</span></div></div></article>
       </div>
     </div>
   </section>
@@ -292,41 +457,90 @@
 
 <footer>
   <div class="container footer-grid">
-    <div><a class="logo" href="#">AULA<span>360</span></a><p class="footer-copy">© 2026 AULA360. Todos los derechos reservados.</p></div>
-    <div class="footer-links"><a href="#">Términos</a><a href="#">Privacidad</a><a href="#">Contacto</a></div>
+    <div>
+      <div class="footer-brand">
+        <!-- Logo ORIGINAL en footer (n3yhuls.png) -->
+        <img src="https://iili.io/n3yhuls.png" alt="AULA360 Logo">
+        <a class="logo" href="#"><span>AULA</span><span>360</span></a>
+      </div>
+      <p class="footer-copy">
+        Creado y diseñado por <a href="https://ciborg347.onrender.com" target="_blank" rel="noopener noreferrer">CIBORG 347</a>
+      </p>
+      <p class="footer-copy" style="margin-top:2px;font-size:12px;">© 2026 AULA360. Todos los derechos reservados.</p>
+    </div>
+    <div class="footer-links">
+      <a href="#">Términos</a>
+      <a href="#">Privacidad</a>
+      <a href="#">Contacto</a>
+    </div>
   </div>
 </footer>
+
+<!-- WHATSAPP FLOATING BUTTON -->
+<a href="https://wa.me/5491234567890?text=Hola%20AULA360!%20Quiero%20más%20información%20sobre%20los%20cursos." 
+   class="whatsapp-float" 
+   target="_blank" 
+   rel="noopener noreferrer"
+   aria-label="Contactar por WhatsApp">
+  <span class="tooltip">Consultá por WhatsApp</span>
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
 
 <div class="modal" id="courseModal" aria-hidden="true">
   <div class="modal-card">
     <button class="modal-close" id="closeModal" aria-label="Cerrar">×</button>
-    <div class="modal-img"><img id="modalImage" src="" alt=""></div>
+    <div class="modal-img">
+      <img id="modalImage" src="" alt="">
+      <span class="modal-badge" id="modalBadge">DESTACADO</span>
+    </div>
     <div class="modal-content">
-      <div class="course-cat" id="modalCategory"></div>
-      <h2 id="modalTitle"></h2>
-      <p id="modalDescription"></p>
+      <div class="course-cat" id="modalCategory">Categoría</div>
+      <h2 id="modalTitle">Título del Curso</h2>
+      <p class="modal-desc" id="modalDescription">Descripción completa del curso con todos los detalles.</p>
+      
       <div class="modal-details">
-        <div class="detail" id="modalDuration"></div>
-        <div class="detail" id="modalLevel"></div>
-        <div class="detail">🏆 Certificado incluido</div>
+        <div class="detail" id="modalDuration">⏱ 8 h</div>
+        <div class="detail" id="modalLevel">📊 Principiante</div>
+        <div class="detail">🏆 Certificado</div>
+        <div class="detail">📱 Acceso 24/7</div>
       </div>
-      <div class="modal-price" id="modalPrice"></div>
-      <button class="btn btn-primary" style="width:100%" id="buyBtn">Quiero hacer este curso →</button>
+
+      <div class="modal-benefits">
+        <div class="mb"><span>✅</span> Clases grabadas en HD</div>
+        <div class="mb"><span>✅</span> Material descargable</div>
+        <div class="mb"><span>✅</span> Soporte por WhatsApp</div>
+        <div class="mb"><span>✅</span> Actualizaciones incluidas</div>
+      </div>
+
+      <div class="modal-price" id="modalPrice">
+        $18.900 <small>$24.900</small>
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn btn-primary" id="buyBtn">Comprar ahora →</button>
+        <a href="https://wa.me/5491234567890?text=Hola%20AULA360!%20Quiero%20más%20información%20sobre%20el%20curso%20" 
+           class="btn btn-whatsapp" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           id="whatsappModalBtn">
+          💬 Consultar por WhatsApp
+        </a>
+      </div>
     </div>
   </div>
 </div>
 
 <script>
 const courses = [
-  {id:1,cat:"Masajes",title:"Masaje Profesional desde Cero",desc:"Aprendé técnicas de relajación, masajes corporales y preparación de una sesión profesional.",duration:"6 h de contenido",level:"Principiante",price:"$18.900",img:"https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=900&q=85",tag:"MÁS VENDIDO"},
-  {id:2,cat:"Cocina",title:"Cocina Profesional",desc:"Fundamentos, técnicas, organización de cocina y recetas para mejorar tus habilidades.",duration:"8 h de contenido",level:"Inicial / Medio",price:"$21.900",img:"https://images.unsplash.com/photo-1556911220-bff31c812dba?w=900&q=85",tag:"POPULAR"},
-  {id:3,cat:"Peluquería",title:"Peluquería Integral",desc:"Cortes, brushing, herramientas, preparación y técnicas esenciales para comenzar.",duration:"10 h de contenido",level:"Principiante",price:"$24.900",img:"https://images.unsplash.com/photo-1560066984-138dadb4c035?w=900&q=85",tag:"NUEVO"},
-  {id:4,cat:"Belleza",title:"Manicuría y Uñas",desc:"Preparación de uñas, esmaltado, cuidados y técnicas para crear un servicio profesional.",duration:"5 h de contenido",level:"Principiante",price:"$16.900",img:"https://images.unsplash.com/photo-1604654894610-df63bc536371?w=900&q=85",tag:"OFERTA"},
-  {id:5,cat:"Oficios",title:"Electricidad Domiciliaria",desc:"Conceptos fundamentales, herramientas, instalaciones y prácticas de electricidad para el hogar.",duration:"9 h de contenido",level:"Inicial",price:"$22.900",img:"https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=900&q=85",tag:"POPULAR"},
-  {id:6,cat:"Oficios",title:"Carpintería para Principiantes",desc:"Conocé herramientas, materiales y técnicas para comenzar tus primeros proyectos.",duration:"7 h de contenido",level:"Principiante",price:"$19.900",img:"https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=900&q=85",tag:"NUEVO"},
-  {id:7,cat:"Tecnología",title:"Diseño Web desde Cero",desc:"Creá tus primeras páginas con HTML, CSS y JavaScript mediante ejercicios prácticos.",duration:"12 h de contenido",level:"Principiante",price:"$27.900",img:"https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=900&q=85",tag:"DESTACADO"},
-  {id:8,cat:"Cocina",title:"Pastelería y Repostería",desc:"Aprendé masas, cremas, decoración y técnicas para producir tortas y postres.",duration:"7 h de contenido",level:"Inicial",price:"$20.900",img:"https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=900&q=85",tag:"POPULAR"},
-  {id:9,cat:"Belleza",title:"Maquillaje Social",desc:"Preparación de piel, productos, técnicas y looks para eventos y ocasiones especiales.",duration:"6 h de contenido",level:"Principiante",price:"$17.900",img:"https://images.unsplash.com/photo-1487412912498-0447578fcca8?w=900&q=85",tag:"NUEVO"}
+  {id:1,cat:"Masajes",title:"Masaje Profesional desde Cero",desc:"Aprendé técnicas de relajación, masajes corporales y preparación de una sesión profesional. Incluye prácticas guiadas y tips para empezar a ofrecer tus servicios.",duration:"6 h de contenido",level:"Principiante",price:"$18.900",oldPrice:"$24.900",img:"https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=900&q=85",tag:"MÁS VENDIDO"},
+  {id:2,cat:"Cocina",title:"Cocina Profesional",desc:"Fundamentos, técnicas de cocina, organización de cocina y recetas para mejorar tus habilidades culinarias. Ideal para quienes quieren dar sus primeros pasos en gastronomía.",duration:"8 h de contenido",level:"Inicial / Medio",price:"$21.900",oldPrice:"$28.900",img:"https://images.unsplash.com/photo-1556911220-bff31c812dba?w=900&q=85",tag:"POPULAR"},
+  {id:3,cat:"Peluquería",title:"Peluquería Integral",desc:"Cortes, brushing, herramientas, preparación y técnicas esenciales para comenzar en el mundo de la peluquería profesional.",duration:"10 h de contenido",level:"Principiante",price:"$24.900",oldPrice:"$32.900",img:"https://images.unsplash.com/photo-1560066984-138dadb4c035?w=900&q=85",tag:"NUEVO"},
+  {id:4,cat:"Belleza",title:"Manicuría y Uñas",desc:"Preparación de uñas, esmaltado, cuidados y técnicas para crear un servicio profesional de manicuría. Aprendé desde lo básico hasta diseños avanzados.",duration:"5 h de contenido",level:"Principiante",price:"$16.900",oldPrice:"$22.900",img:"https://images.unsplash.com/photo-1604654894610-df63bc536371?w=900&q=85",tag:"OFERTA"},
+  {id:5,cat:"Oficios",title:"Electricidad Domiciliaria",desc:"Conceptos fundamentales, herramientas, instalaciones y prácticas de electricidad para el hogar. Aprendé a realizar instalaciones y reparaciones básicas.",duration:"9 h de contenido",level:"Inicial",price:"$22.900",oldPrice:"$29.900",img:"https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=900&q=85",tag:"POPULAR"},
+  {id:6,cat:"Oficios",title:"Carpintería para Principiantes",desc:"Conocé herramientas, materiales y técnicas para comenzar tus primeros proyectos de carpintería. Desde muebles simples hasta trabajos más elaborados.",duration:"7 h de contenido",level:"Principiante",price:"$19.900",oldPrice:"$25.900",img:"https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=900&q=85",tag:"NUEVO"},
+  {id:7,cat:"Tecnología",title:"Diseño Web desde Cero",desc:"Creá tus primeras páginas con HTML, CSS y JavaScript mediante ejercicios prácticos. No necesitas experiencia previa.",duration:"12 h de contenido",level:"Principiante",price:"$27.900",oldPrice:"$35.900",img:"https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=900&q=85",tag:"DESTACADO"},
+  {id:8,cat:"Cocina",title:"Pastelería y Repostería",desc:"Aprendé masas, cremas, decoración y técnicas para producir tortas y postres profesionales. Incluye recetas y tips de decoración.",duration:"7 h de contenido",level:"Inicial",price:"$20.900",oldPrice:"$26.900",img:"https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=900&q=85",tag:"POPULAR"},
+  {id:9,cat:"Belleza",title:"Maquillaje Social",desc:"Preparación de piel, productos, técnicas y looks para eventos y ocasiones especiales. Aprendé a realzar la belleza natural.",duration:"6 h de contenido",level:"Principiante",price:"$17.900",oldPrice:"$23.900",img:"https://images.unsplash.com/photo-1487412912498-0447578fcca8?w=900&q=85",tag:"NUEVO"}
 ];
 
 const grid=document.getElementById("courseGrid"), search=document.getElementById("search"), noResults=document.getElementById("noResults");
@@ -348,7 +562,7 @@ function renderCourses(){
       <div class="course-body">
         <div class="course-cat">${c.cat}</div>
         <h3>${c.title}</h3>
-        <p class="course-desc">${c.desc}</p>
+        <p class="course-desc">${c.desc.slice(0,80)}...</p>
         <div class="meta"><span>⏱ ${c.duration}</span><span>•</span><span>📊 ${c.level}</span></div>
         <div class="course-footer">
           <div class="price">${c.price} <small>pago único</small></div>
@@ -383,20 +597,37 @@ search.addEventListener("input",renderCourses);
 document.querySelector(".search-btn").addEventListener("click",renderCourses);
 
 const modal=document.getElementById("courseModal");
+const whatsappBase="https://wa.me/5491234567890?text=Hola%20AULA360!%20Quiero%20más%20información%20sobre%20el%20curso%20";
+
 function openCourse(id){
   const c=courses.find(x=>x.id===id);
   document.getElementById("modalImage").src=c.img;
   document.getElementById("modalImage").alt=c.title;
+  document.getElementById("modalBadge").textContent=c.tag;
   document.getElementById("modalCategory").textContent=c.cat;
   document.getElementById("modalTitle").textContent=c.title;
-  document.getElementById("modalDescription").textContent=c.desc+" Incluye clases grabadas, material complementario y acceso desde cualquier dispositivo.";
+  document.getElementById("modalDescription").textContent=c.desc+" Incluye clases grabadas en HD, material complementario descargable, acceso desde cualquier dispositivo y soporte por WhatsApp.";
   document.getElementById("modalDuration").textContent="⏱ "+c.duration;
   document.getElementById("modalLevel").textContent="📊 "+c.level;
-  document.getElementById("modalPrice").textContent=c.price;
-  document.getElementById("buyBtn").onclick=()=>alert("Acá podés conectar el botón con WhatsApp, Mercado Pago, Stripe o tu sistema de checkout.");
-  modal.classList.add("open");modal.setAttribute("aria-hidden","false");document.body.style.overflow="hidden";
+  document.getElementById("modalPrice").innerHTML=`${c.price} <small>${c.oldPrice}</small>`;
+  
+  const buyBtn=document.getElementById("buyBtn");
+  buyBtn.onclick=()=>alert("✅ Redirigiendo al checkout para comprar el curso: "+c.title);
+  
+  const waBtn=document.getElementById("whatsappModalBtn");
+  waBtn.href=whatsappBase+encodeURIComponent(c.title);
+  
+  modal.classList.add("open");
+  modal.setAttribute("aria-hidden","false");
+  document.body.style.overflow="hidden";
 }
-function closeCourse(){modal.classList.remove("open");modal.setAttribute("aria-hidden","true");document.body.style.overflow=""}
+
+function closeCourse(){
+  modal.classList.remove("open");
+  modal.setAttribute("aria-hidden","true");
+  document.body.style.overflow="";
+}
+
 document.getElementById("closeModal").addEventListener("click",closeCourse);
 modal.addEventListener("click",e=>{if(e.target===modal)closeCourse()});
 document.addEventListener("keydown",e=>{if(e.key==="Escape")closeCourse()});
